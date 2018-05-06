@@ -83,9 +83,9 @@ namespace DiscordBot
 
             System.Net.WebClient get_eqi = new System.Net.WebClient();
             get_eqi.Encoding = Encoding.UTF8;
-            //string res_eqi = get_eqi.DownloadString($"http://www.kmoni.bosai.go.jp/new/webservice/hypo/eew/{get_time().Result}.json");
+            string res_eqi = get_eqi.DownloadString($"http://www.kmoni.bosai.go.jp/new/webservice/hypo/eew/{get_time().Result}.json");
             //string res_eqi = get_eqi.DownloadString("http://www.kmoni.bosai.go.jp/new/webservice/hypo/eew/20180424175339.json");flag="テスト";
-            string res_eqi = get_eqi.DownloadString("http://www.kmoni.bosai.go.jp/new/webservice/hypo/eew/20180105110359.json");flag="テスト";
+            //string res_eqi = get_eqi.DownloadString("http://www.kmoni.bosai.go.jp/new/webservice/hypo/eew/20180105110359.json");flag="テスト";
             var eqi = DynamicJson.Parse(res_eqi);
 
             var chatchannnel = client.GetChannel(442674954870325262) as SocketTextChannel;
