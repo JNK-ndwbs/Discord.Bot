@@ -37,7 +37,6 @@ namespace DiscordBot
 
             token = configs[0];
             channelid = Convert.ToUInt64(configs[1]);
-            //Console.WriteLine($"token:{token}||channel:{channelid}");
 
             canRun = true;
 
@@ -88,7 +87,7 @@ namespace DiscordBot
             //string res_eqi = get_eqi.DownloadString("http://www.kmoni.bosai.go.jp/new/webservice/hypo/eew/20180105110359.json");flag="テスト";
             var eqi = DynamicJson.Parse(res_eqi);
 
-            var chatchannnel = client.GetChannel(442674954870325262) as SocketTextChannel;
+            var chatchannnel = client.GetChannel(channelid) as SocketTextChannel;
 
             if (res_eqi.Contains("ありません")) { return; }
 
